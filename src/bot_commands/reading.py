@@ -94,7 +94,7 @@ async def command(ctx):
             return(f"{message.author.mention}'s reading speed: **{reading_speed} wpm**\nComprehension: 60%\n **Average reader**\nYou are an oral reader. You may rapidly and significantly progress by suppressing subvocalization.\n Tips to improve:\n1. Word–Chunking\n2.Do Not Reread the Words on the Page\n3.Use Peripheral Vision\n4.Work on Improving Your Vocabulary\n"  + 
                    "you read excerpts from:"
                     + '**' + "\n".join(from_books) + '**'       )
-        elif(reading_speed>300 and reading_speed<600):
+        elif(reading_speed>300 and reading_speed<450):
             return(f"{message.author.mention}'s reading speed: **{reading_speed} wpm**\nComprehension: 80%\n **Good reader**\nYou are an auditory reader.\n Tips to improve:\n 1. Word–Chunking\n2.Do Not Reread the Words on the Page\n3.Use Peripheral Vision\n4.Work on Improving Your Vocabulary\n" +   
                     "you read excerpts from:"
                     + '**' + "\n".join(from_books) + '**'       )
