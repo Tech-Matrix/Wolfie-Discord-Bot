@@ -45,12 +45,12 @@ def make_command(caller, meta, help_cmd = default_help):
 import src.bot_commands.reading as reading
 make_command(reading.command, reading.meta, reading.help)
 
-# reddit commands
+'''# reddit commands
 from src.bot_commands.reddit import (
     commands as reddit_commands
 )
 for command in reddit_commands:
-    make_command(command['caller'], command['meta'])
+    make_command(command['caller'], command['meta'])'''
 
     # thanks command
 import src.bot_commands.thanks as thanks
