@@ -45,7 +45,7 @@ def make_command(caller, meta, help_cmd = default_help):
 import src.bot_commands.reading as reading
 make_command(reading.command, reading.meta, reading.help)
 
-# reddit commands
+#reddit commands
 from src.bot_commands.reddit import (
     commands as reddit_commands
 )

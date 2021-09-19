@@ -6,7 +6,7 @@ from src.database import thanks_db
 
 #### main
 
-thanks_keywords = ['thx', 'thanks', 'thnks', 'thnx', 'thank']
+thanks_keywords = ['thx', 'thanks', 'thnks', 'thnx', 'thank', 'ty' ,'tnx','thanx'] #update
     # what counts as a thanks
 
     # main listener
@@ -40,7 +40,7 @@ async def listener(ctx):
                     },
                     upsert = True
                 )
-
+            await confirmation_message.delete() #updated to delete message after reaction
             # notify success
             if len(thanked_users) == 1:
                 await message.reply('user has been thanked')
@@ -56,8 +56,7 @@ async def listener(ctx):
     if in_session or is_command or message.author.bot:
             # not our bussiness
         return
-
-    if not any(word in message.content for word in thanks_keywords):
+    if not any(word in message.content.lower() for word in thanks_keywords): #updated to ignore case while comparing the thanks
             # not a thanks message
         return
 
