@@ -85,11 +85,26 @@ async def command(ctx):
         reading_speed = (words_read / time_taken.total_seconds())*60
         reading_speed = round(reading_speed, 2)
 
-        return (
-            f"{message.author.mention}'s reading speed: **{reading_speed}**\n"
-            "you read excerpts from:\n"
-            + '**' + "\n".join(from_books) + '**'
-        )
+        if (reading_speed<200) :
+                return(f"{message.author.mention}'s reading speed: **{reading_speed} wpm**\nComprehension: 50%\n **Slow reader**\nYou have many possibilities for improvement\n Tips to improve:\n 1. Word–Chunking\n2.Do Not Reread the Words on the Page\n3.Use Peripheral Vision\n4.Work on Improving Your Vocabulary\n"+    
+                    "you read excerpts from:\n"
+                    + '**' + "\n".join(from_books) + '**'       )
+
+        elif(reading_speed>200 and reading_speed<300):
+            return(f"{message.author.mention}'s reading speed: **{reading_speed} wpm**\nComprehension: 60%\n **Average reader**\nYou are an oral reader. You may rapidly and significantly progress by suppressing subvocalization.\n Tips to improve:\n1. Word–Chunking\n2.Do Not Reread the Words on the Page\n3.Use Peripheral Vision\n4.Work on Improving Your Vocabulary\n"  + 
+                   "you read excerpts from:"
+                    + '**' + "\n".join(from_books) + '**'       )
+        elif(reading_speed>300 and reading_speed<450):
+            return(f"{message.author.mention}'s reading speed: **{reading_speed} wpm**\nComprehension: 80%\n **Good reader**\nYou are an auditory reader.\n Tips to improve:\n 1. Word–Chunking\n2.Do Not Reread the Words on the Page\n3.Use Peripheral Vision\n4.Work on Improving Your Vocabulary\n" +   
+                    "you read excerpts from:"
+                    + '**' + "\n".join(from_books) + '**'       )
+        else:
+            return(f"{message.author.mention}'s reading speed: **{reading_speed} wpm**\nComprehension: 85%\n **Excellent, accomplished reader**\nYou are a visual reader. Your reading speed is the gem of your CV\n"   + 
+                    "you read excerpts from:"
+                    + '**' + "\n".join(from_books) + '**'       )    
+
+               
+        
 
     # called when user times out
     async def timeout_caller():
